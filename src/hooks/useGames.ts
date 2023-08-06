@@ -29,7 +29,7 @@ const useGames = () => {
     const controller = new AbortController();
 
     apiClient
-      .get<APIResponse>("/xgames", { signal: controller.signal })
+      .get<APIResponse>("/games", { signal: controller.signal })
       .then((res) => setGames(res.data.results))
       .catch((err) => {
         if (err instanceof CanceledError) return;
