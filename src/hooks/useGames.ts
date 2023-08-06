@@ -31,7 +31,7 @@ const useGames = () => {
 
     setLoading(true);
     apiClient
-      .get<APIResponse>("/xgames", { signal: controller.signal })
+      .get<APIResponse>("/games", { signal: controller.signal })
       .then((res) => {
         setGames(res.data.results);
         setLoading(false);
